@@ -12,6 +12,7 @@
             --card-bg: #161c27;
             --text-main: #e0e0e0;
             --text-sub: #a0a0a0;
+            --accent-gold: #c5a059;
         }
 
         body {
@@ -30,7 +31,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* 背景画像がなくても真っ黒にならないよう、グラデーションを配置 */
             background: radial-gradient(circle at center, #1a2230 0%, var(--dark-bg) 100%);
             padding: 40px 20px;
         }
@@ -121,6 +121,25 @@
             font-size: 0.8rem;
         }
 
+        /* Report Section */
+        .report-section {
+            background: #111827;
+            padding: 80px 0;
+            margin-top: 50px;
+            border-top: 1px solid #2a3241;
+        }
+        .report-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .report-header { text-align: center; margin-bottom: 60px; }
+        .report-header h2 { font-size: 2rem; color: #fff; line-height: 1.4; }
+        .report-box { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid #2a3241; 
+            padding: 30px; 
+            border-radius: 10px; 
+            margin-bottom: 40px; 
+        }
+        .report-box h3 { color: var(--accent-gold); font-size: 1.2rem; border-bottom: 1px solid #2a3241; padding-bottom: 10px; }
+        
         /* Table */
         .comparison-table {
             width: 100%;
@@ -177,7 +196,7 @@
 
 <div class="summary-card">
     <h2>「Ready to Sense」—— 開発を加速するATIモジュールの革命</h2>
-    <p>最新のATI（Advanced Thermal Imager）モジュールは、センサー単体を超え、画像補正エンジンを統合した「完成されたビジョンシステム」です。12µmピッチの微細化技術をベースに、ユーザー側の処理負荷を大幅に低減します [cite: 167, 178, 186]。</p>
+    <p>最新のATI（Advanced Thermal Imager）モジュールは、センサー単体を超え、画像補正エンジンを統合した「完成されたビジョンシステム」です。12µmピッチの微細化技術をベースに、ユーザー側の処理負荷を大幅に低減します。</p>
 </div>
 
 <div class="container">
@@ -190,9 +209,9 @@
             <h2>ATI シリーズ</h2>
             <p><strong>インテリジェンスを内蔵した即戦力モジュール</strong></p>
             <ul class="feature-list">
-                <li>不均一補正(NUC)やバッドピクセル置換(BPR)をモジュール内で完結 [cite: 216, 263]。</li>
-                <li>AT1320は約7.5gの超軽量設計で、ドローン等への実装に最適 [cite: 525]。</li>
-                <li>0.3ms〜1.2msの超低遅延出力により高速な制御に対応 [cite: 221]。</li>
+                <li>不均一補正(NUC)やバッドピクセル置換(BPR)をモジュール内で完結。</li>
+                <li>AT1320は約7.5gの超軽量設計で、ドローン等への実装に最適。</li>
+                <li>0.3ms〜1.2msの超低遅延出力により高速な制御に対応。</li>
             </ul>
         </div>
     </div>
@@ -240,24 +259,53 @@
         </tr>
         <tr>
             <td>ATI320 (QVGA)</td>
-            <td>320 x 240 [cite: 221]</td>
-            <td>7.5 g [cite: 525]</td>
-            <td>< 0.4 ms [cite: 221]</td>
-            <td>< 50 mK [cite: 221]</td>
+            <td>320 x 240</td>
+            <td>7.5 g</td>
+            <td>< 0.4 ms</td>
+            <td>< 50 mK</td>
         </tr>
         <tr>
             <td>ATI640 (VGA)</td>
-            <td>640 x 480 [cite: 221]</td>
-            <td>14.0 g [cite: 356]</td>
-            <td>< 1.3 ms [cite: 221]</td>
-            <td>< 40 mK [cite: 221]</td>
+            <td>640 x 480</td>
+            <td>14.0 g</td>
+            <td>< 1.3 ms</td>
+            <td>< 40 mK</td>
         </tr>
     </table>
 </div>
 
+<!-- レポートセクションの挿入 -->
+<section class="report-section">
+    <div class="report-content">
+        <div class="report-header">
+            <span style="color: var(--brand-red); font-weight: bold;">SPECIAL REPORT</span>
+            <h2>「見えない」を可視化する熱画像技術の限界突破<br>—— SWaP最適化がもたらす産業DXの再定義</h2>
+        </div>
+
+        <div class="report-box">
+            <h3>【エグゼクティブ・サマリー】</h3>
+            <p>赤外線センサーの微細化技術（12µmピッチ）が、産業機器の小型化と高性能化を同時に実現し始めている。冷却型と非冷却型の高度な使い分けが、従来の「温度計測」を超えた「環境認識」の精度を劇的に向上させている。軍事・宇宙基準の信頼性が、今や工場の自律化や車載安全技術の標準スペックとして、設計思想の転換を迫っている。</p>
+        </div>
+
+        <h3>■ 市場の現状分析</h3>
+        <p>赤外線センシング技術は、単なる「温度の可視化」から、機械学習と融合した「自律判断のための入力デバイス」へと進化しました。現在、SofradirとULISの系譜を継ぐLYNREDのポートフォリオは、ピクセルピッチの微細化によるSWaP（小型・軽量・低消費電力）の最適化を牽引しています。これにより、ドローンや車載ナイトビジョン、産業用ロボットへの実装が急速に進んでいます。</p>
+
+        <h3>■ 浮かび上がる「静かなる課題」</h3>
+        <p>多くの企業が陥っている罠は、「センサーの画素数や感度」だけに焦点を当て、それを支える<strong>「光学系の限界」</strong>を軽視している点です。どれほど高性能なセンサーを採用しても、レンズの品質が追いついていなければ、ノイズの増幅と解像度の低下を招きます。特に過酷な環境下での信頼性において、民生品転用の光学系では不十分なケースが散見されます。</p>
+
+        <div class="report-box">
+            <h3>【202X年の展望と対策】</h3>
+            <p><strong>1. スペクトルの統合的活用:</strong> 冷却型による高精度画像と非冷却型による広角検知の組み合わせによる高度な自律システムの構築。<br>
+            <strong>2. 精密光学系の再評価:</strong> Janos Technologyのような軍事・宇宙基準の光学系が、AIの誤検知を最小限に抑える「信頼の基盤」となる。<br>
+            <strong>3. 戦略的アプローチ:</strong> センサーとレンズの「統合的な設計」こそが、次世代の自動化プロジェクトの成否を分ける鍵となる。</p>
+        </div>
+    </div>
+</section>
+
 <footer>
     <h2>システム設計のボトルネックを解消する</h2>
-    <p>センサーのポテンシャルを100%引き出すには、Janos Technologyの精密光学系との統合設計が不可欠です。</p>
+    <p>センサーのポテンシャルを100%引き出すには、Janos Technologyの精密光学系との統合設計が不可欠です。<br>
+    弊社では、過酷環境下でのセンシング最適化に関する技術検証データを保有しております。</p>
     <br><br>
     <a href="mailto:sales@chronix.co.jp" class="btn-contact">クロニクス株式会社へ問い合わせる</a>
     <p style="margin-top: 50px; font-size: 0.8rem; color: var(--text-sub);">
