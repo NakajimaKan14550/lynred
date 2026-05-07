@@ -13,7 +13,6 @@
             --text-main: #e0e0e0;
             --text-sub: #a0a0a0;
             --accent-gold: #c5a059;
-            --border-blue: #1e3a8a;
         }
 
         body {
@@ -24,23 +23,17 @@
             line-height: 1.8;
         }
 
-        /* Top Bar for Logo */
+        /* Logo and Header */
         .top-nav {
-            padding: 20px;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 20px;
+            left: 20px;
             z-index: 100;
         }
-        .top-nav img {
-            height: 40px;
-            width: auto;
-        }
+        .top-nav img { height: 40px; cursor: pointer; }
 
-        /* Hero Section */
         header {
-            min-height: 70vh;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -50,23 +43,11 @@
             padding: 80px 20px 40px;
         }
 
-        .brand-header-logo {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 25px;
-        }
-
-        header p.brand-tag {
-            letter-spacing: 4px;
-            color: var(--brand-red);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
+        .lynred-logo { max-width: 280px; margin-bottom: 20px; cursor: pointer; }
 
         h1 {
-            font-size: 3.5rem;
-            margin: 0 0 15px;
+            font-size: 3rem;
+            margin: 0;
             letter-spacing: 0.1em;
             background: linear-gradient(to right, #fff, var(--brand-red));
             -webkit-background-clip: text;
@@ -74,108 +55,69 @@
             font-weight: 700;
         }
 
-        /* Summary Card */
-        .summary-card {
-            max-width: 900px;
-            margin: -50px auto 50px;
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Technology Overview */
+        .tech-intro {
             background: var(--card-bg);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
             border-top: 4px solid var(--brand-red);
-            position: relative;
-            z-index: 10;
         }
 
-        .summary-card h2 { color: var(--brand-red); font-size: 1.6rem; margin-top: 0; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Technology Guide Section */
-        .tech-guide {
-            background: #0f172a;
-            padding: 60px 40px;
-            border-radius: 20px;
-            margin-bottom: 80px;
-            border-left: 5px solid var(--brand-red);
-        }
         .tech-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 30px;
             margin-top: 30px;
         }
-        .tech-item h4 { color: var(--brand-red); margin-bottom: 10px; font-size: 1.2rem; }
-        .tech-item ul { padding-left: 20px; color: var(--text-sub); }
 
-        /* Product Sections */
-        .product-section {
+        .tech-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .tech-card h3 { color: var(--brand-red); margin-top: 0; }
+
+        /* Product Section */
+        .product-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
             align-items: center;
         }
 
-        .img-container {
+        .product-box.alt { direction: rtl; }
+        .product-box.alt .product-info { direction: ltr; }
+
+        .img-wrap {
             background: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 200px;
-        }
-        .img-container:hover { transform: translateY(-10px); }
-        .img-container img { max-width: 100%; height: auto; border-radius: 5px; }
-
-        .product-info h2 { color: #fff; border-left: 4px solid var(--brand-red); padding-left: 15px; margin-bottom: 10px; }
-        .spec-badge {
-            display: inline-block;
-            background: rgba(178, 34, 34, 0.2);
-            color: #ff4d4d;
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .feature-list { list-style: none; padding: 0; }
-        .feature-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 15px;
-            color: var(--text-sub);
-        }
-        .feature-list li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--brand-red);
-            font-size: 0.8rem;
-        }
-
-        /* Report & Algorithm Section */
-        .report-section {
-            background: #111827;
-            padding: 80px 0;
-            border-top: 1px solid #2a3241;
-        }
-        .report-content { max-width: 850px; margin: 0 auto; padding: 0 20px; }
-        .algorithm-box {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
-            border: 1px solid var(--border-blue);
-            margin: 40px 0;
+            transition: 0.3s;
+            cursor: zoom-in;
+        }
+        .img-wrap:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(178,34,34,0.3); }
+        .img-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+        .product-info h2 { font-size: 2rem; margin-bottom: 15px; border-left: 5px solid var(--brand-red); padding-left: 15px; }
+        .type-tag { color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* Report area */
+        .report-area {
+            background: #0f172a;
+            padding: 60px;
+            border-radius: 20px;
+            margin-top: 100px;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
             background: #05080d;
             border-top: 1px solid #1a2230;
         }
@@ -188,15 +130,11 @@
             font-weight: bold;
             display: inline-block;
             transition: 0.3s;
-            margin-bottom: 30px;
         }
-        .btn-contact:hover { background: #e60000; box-shadow: 0 0 20px rgba(178,34,34,0.5); }
-
-        .product-section.alt { direction: rtl; }
-        .product-section.alt .product-info { direction: ltr; }
+        .btn-contact:hover { background: #e60000; }
 
         @media (max-width: 768px) {
-            .product-section, .product-section.alt, .tech-grid { grid-template-columns: 1fr; direction: ltr; }
+            .product-box, .tech-grid { grid-template-columns: 1fr; direction: ltr !important; }
             h1 { font-size: 2.2rem; }
         }
     </style>
@@ -204,122 +142,93 @@
 <body>
 
 <nav class="top-nav">
-    <a href="https://nakajimakan14550.github.io/home/">
+    <a href="https://nakajimakan14550.github.io/home/" target="_blank">
         <img src="logo.png" alt="CHRONIX">
     </a>
 </nav>
 
 <header>
-    <img src="lynred.png" alt="LYNRED" class="brand-header-logo">
-    <p class="brand-tag">STATE-OF-THE-ART INFRARED</p>
-    <h1>LYNRED TECHNOLOGY</h1>
-    <p>見えない波長を、即座に価値ある画像へ変換する</p>
+    <a href="lynred.png" target="_blank">
+        <img src="lynred.png" alt="LYNRED" class="lynred-logo">
+    </a>
+    <p style="letter-spacing: 3px; color: var(--brand-red); font-weight: bold;">STATE-OF-THE-ART INFRARED</p>
+    <h1>赤外線センサー LYNRED</h1>
 </header>
 
-<div class="summary-card">
-    <h2>「Ready to Sense」—— 開発を加速するATIモジュールの革命</h2>
-    <p>最新のATIモジュールは、センサー単体を超え、画像補正エンジンを統合した「完成されたビジョンシステム」です。12µmピッチの微細化技術をベースに、ユーザー側の処理負荷を大幅に低減します。</p>
-</div>
-
 <div class="container">
-    <section class="tech-guide">
-        <h2 style="margin-top: 0; color: #fff;">赤外線カメラの「2大勢力」と進化</h2>
+    <section class="tech-intro">
+        <h2>赤外線カメラの「2大勢力」を知る</h2>
         <div class="tech-grid">
-            <div class="tech-item">
-                <h4>● 冷却型（Cooled）</h4>
-                <ul>
-                    <li><strong>特徴:</strong> センサーをマイナス200°C近くまで極低温冷却。</li>
-                    <li><strong>理由:</strong> センサー自体の熱(ノイズ)を消し、遠くのかすかな熱をキャッチ。</li>
-                    <li><strong>使い道:</strong> 宇宙、軍事、はるか遠方の高度な監視。</li>
-                </ul>
+            <div class="tech-card">
+                <h3>冷却型 (MCT等)</h3>
+                <p>センサーを-200°C近くまで冷却し、ノイズを極限まで排除。数km先の微かな熱源を捉える「ガチ」な用途（宇宙・軍事）向け。</p>
             </div>
-            <div class="tech-item">
-                <h4>● 非冷却型（Uncooled）</h4>
-                <ul>
-                    <li><strong>特徴:</strong> 冷やさず駆動（マイクロボロメーター）。</li>
-                    <li><strong>理由:</strong> 安価・小型・即座に起動可能。</li>
-                    <li><strong>使い道:</strong> 車載ナイトビジョン、工場の設備点検、体温測定。</li>
-                </ul>
+            <div class="tech-card">
+                <h3>非冷却型 (マイクロボロメーター)</h3>
+                <p>冷やさずに動作。小型・軽量・低価格で、車載ナイトビジョンや工場点検、体温測定など「暮らしを支える」用途に最適。</p>
             </div>
         </div>
     </section>
 
-    <div class="product-section">
-        <div class="img-container">
+    <div class="product-box">
+        <div class="img-wrap" onclick="window.open('ati.png', '_blank')">
             <img src="ati.png" alt="ATI Module">
         </div>
         <div class="product-info">
-            <span class="spec-badge">ATI / ATTO TECHNOLOGY</span>
+            <span class="type-tag">Integrated Module</span>
             <h2>ATI シリーズ</h2>
-            <p><strong>SWaP最適化を極めた即戦力モジュール</strong></p>
-            <ul class="feature-list">
-                <li>12µmピッチへの微細化により、高解像度と小型化を両立。</li>
-                <li>不均一補正(NUC)をモジュール内で完結。</li>
-                <li>AT1320は約7.5gの超軽量で、ドローン実装に最適。</li>
-            </ul>
+            <p><strong>ATIは「センサー」ではありません。脳（画像処理エンジン）を備えた「完成モジュール」です。</strong></p>
+            <p>通常、センサー単体ではノイズだらけですが、ATIは内部で画像補正（BPR/NUC）を完結。ユーザーは繋ぐだけで綺麗な映像を得られます。12μmピッチの微細化により、超小型化（SWaP）を実現しました。</p>
         </div>
     </div>
 
-    <div class="product-section alt">
-        <div class="img-container">
+    <div class="product-box alt">
+        <div class="img-wrap" onclick="window.open('mct-mw.png', '_blank')">
             <img src="mct-mw.png" alt="MCT Sensor">
         </div>
         <div class="product-info">
-            <span class="spec-badge">MCT / COOLED</span>
+            <span class="type-tag">Cooled Detector</span>
             <h2>MCT シリーズ</h2>
-            <p><strong>遠距離・極微細な熱源を特定する冷却型</strong></p>
-            <ul class="feature-list">
-                <li>MWIR（中波長）を利用し、遠くをクッキリ捉える。</li>
-                <li>NETD &lt; 20mK の圧倒的な温度分解能。</li>
-                <li>特定のガス（メタン等）が赤外線を吸い込む性質を利用した「ガスの見える化」に対応。</li>
-            </ul>
+            <p><strong>「見えないはずの遠く」をクッキリ映し出す最高峰。</strong></p>
+            <p>センサーを冷却してノイズを消し去ることで、圧倒的な感度を誇ります。特定のガス（メタン等）を可視化する波長設定も可能。MWIR（中波長）を利用した遠距離監視の決定版です。</p>
         </div>
     </div>
 
-    <div class="tech-guide" style="border-left-color: var(--accent-gold); background: #1e293b;">
-        <h3 style="color: #fff;">「見えないもの」を「魔法の目」で見る技術</h3>
-        <p>昔は45μmだったピクセルサイズは、今や12μmへ。テレビがVGAからHDへ進化したように、赤外線の世界も高精細化が進んでいます。
-        また、用途に合わせて波長を使い分けます。
-        身近な温度分布には<strong>LWIR（長波長）</strong>、ガス検知や長距離監視には<strong>MWIR（中波長）</strong>や<strong>SWIR（短波長）</strong>が活躍します。</p>
+    <div class="product-box">
+        <div class="img-wrap" onclick="window.open('ingaas.png', '_blank')">
+            <img src="ingaas.png" alt="InGaAs Sensor">
+        </div>
+        <div class="product-info">
+            <span class="type-tag">SWIR Sensor</span>
+            <h2>InGaAs シリーズ</h2>
+            <p><strong>温度ではなく、物質の「質」を見抜く目。</strong></p>
+            <p>可視光に近い「短波長赤外線（SWIR）」を利用。シリコンを透かして半導体内部を検査したり、水分吸収の違いで食品の傷みを見分けたりします。300Hzの超高速駆動が自慢です。</p>
+        </div>
     </div>
+
+    <div class="product-box alt">
+        <div class="img-wrap" onclick="window.open('ati.png', '_blank')"> <img src="ati.png" alt="Microbolometer">
+        </div>
+        <div class="product-info">
+            <span class="type-tag">Uncooled Microbolometer</span>
+            <h2>IGN / マイクロボロメーター</h2>
+            <p><strong>熱で抵抗が変わる仕組みを利用した、非冷却のスタンダード。</strong></p>
+            <p>昔は画素が45μmと大きかったですが、今は12μmまで細かくなりました。HD画質への進化により、車の自動運転の「夜間の目」として欠かせない存在になっています。</p>
+        </div>
+    </div>
+
+    <section class="report-area">
+        <h2 style="color: var(--brand-red);">【レポート】SWaP最適化がもたらす産業DX</h2>
+        <p>赤外線センシングは「単なる温度計測」から「AIのための環境認識」へと進化しました。ピクセルの微細化により、かつては巨大だったカメラがドローンや小型ロボットに搭載可能（SWaP最適化）になり、シャッターレス・アルゴリズムによって映像が止まるストレスも解消されました。今や赤外線は、私たちの暮らしを陰で支える「魔法の目」なのです。</p>
+    </section>
 </div>
 
-<section class="report-section">
-    <div class="report-content">
-        <div class="report-header">
-            <span style="color: var(--brand-red); font-weight: bold;">SPECIAL REPORT</span>
-            <h2>「見えない」を可視化する熱画像技術の限界突破</h2>
-        </div>
-
-        <div class="algorithm-box">
-            <h3 style="color: var(--brand-red); margin-top: 0;">アルゴリズムという「脳みそ」の役割</h3>
-            <p>センサーが捉えた生の信号を、LYNREDの高度なアルゴリズムが価値ある画像へ変換します。</p>
-            <ul style="color: var(--text-main);">
-                <li><strong>BPR（Bad Pixel Replacement）:</strong> センサーの数え間違い（欠陥画素）を瞬時に補正。</li>
-                <li><strong>シャッターレス・アルゴリズム:</strong> 従来のカメラで必要だった「調整のための静止」を排除。止まらないスムーズな映像を実現。</li>
-            </ul>
-        </div>
-
-        <div class="report-box">
-            <h3>【エグゼクティブ・サマリー】</h3>
-            <p>赤外線センサーの微細化技術（12µmピッチ）が、産業機器の小型化と高性能化を同時に実現。軍事・宇宙基準の信頼性が、今や工場の自律化や車載安全技術の標準スペックとなり、設計思想の転換を迫っています。</p>
-        </div>
-
-        <h3>■ 結論：私たちの暮らしを支える「魔法の目」</h3>
-        <p>昔は大きくて冷やさないと使えなかった赤外線カメラが、今では小さく・安く（SWaP）なりました。二酸化炭素の邪魔を消すフィルターや賢い画像処理を組み合わせることで、自動運転やガス漏れチェックなど、現代社会を陰で支える不可欠な技術となっています。</p>
-    </div>
-</section>
-
 <footer>
-    <img src="logo.png" alt="CHRONIX" style="height: 50px; margin-bottom: 30px; filter: brightness(1.5);">
-    <h2>システム設計のボトルネックを解消する</h2>
-    <p>センサーのポテンシャルを100%引き出すには、精密光学系との統合設計が不可欠です。<br>
-    技術相談・検証データの照会は下記までお問い合わせください。</p>
+    <img src="logo.png" alt="CHRONIX" style="height: 50px; margin-bottom: 20px; filter: brightness(1.5);">
+    <p>センサーのポテンシャルを100%引き出す精密光学系との統合設計をサポートします。</p>
     <br>
     <a href="mailto:sales@chronix.co.jp" class="btn-contact">クロニクス株式会社へ問い合わせる</a>
-    <p style="font-size: 0.8rem; color: var(--text-sub);">
-        © 2026 CHRONIX & LYNRED. Confidential Information.
-    </p>
+    <p style="margin-top: 40px; font-size: 0.8rem; color: var(--text-sub);">© 2026 CHRONIX & LYNRED.</p>
 </footer>
 
 </body>
