@@ -224,7 +224,7 @@
 
     <div class="product-box">
         <div class="img-wrap" onclick="window.open('ing.png', '_blank')">
-            <img src="ing.png" alt="Microbolometer">
+            <img src="mic.png" alt="Microbolometer">
         </div>
         <div class="product-info">
             <span class="type-tag">Microbolometer Chip</span>
@@ -239,6 +239,126 @@
         <p>技術革新（微細化・アルゴリズム進化）により、かつては巨大で冷却が必要だったカメラが「小さく・安く（SWaP）」なりました。今や赤外線は、自動運転やガス漏れチェック、食品検査など、あらゆる産業DXの現場で活躍しています。</p>
     </section>
 </div>
+
+    <section class="jr-guide">
+    <style>
+        .jr-guide {
+            background-color: #1e293b;
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border: 2px dashed #c5a059;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #e0e0e0;
+        }
+        .jr-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .jr-header h2 {
+            color: #c5a059;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .jr-header p {
+            font-size: 1rem;
+            color: #a0a0a0;
+        }
+        .jr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .jr-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .jr-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .jr-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .jr-card h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .jr-tag {
+            background: #b22222;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .jr-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        .jr-summary {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(178, 34, 34, 0.15);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .jr-summary b {
+            color: #ff4d4d;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <div class="jr-header">
+        <h2>中学生でもわかる！赤外線センサーの特徴まとめ</h2>
+        <p>赤外線センサーは「目に見えない光（熱など）を映すカメラ」ですが、タイプによって得意技が全然違います。</p>
+    </div>
+
+    <div class="jr-grid">
+        <div class="jr-card">
+            <div class="jr-icon">🌡️</div>
+            <div class="jr-tag">例え：非接触温度計のすごい版</div>
+            <h3>マイクロボロメーター</h3>
+            <p class="jr-desc"><b>特徴：</b>冷やさずに動く、一番「コスパ最強」なチップ。<br><b>使い道：</b>車の夜間歩行者検知や、工場の機械の異常発熱チェックなど。</p>
+        </div>
+
+        <div class="jr-card">
+            <div class="jr-icon">🧠</div>
+            <div class="jr-tag">例え：下ごしらえ済みの料理セット</div>
+            <h3>ATI シリーズ</h3>
+            <p class="jr-desc"><b>特徴：</b>センサーに「脳みそ（計算エンジン）」が合体した完成品。<br><b>使い道：</b>ドローンにポンと乗せるだけで、難しい設定なしに綺麗な映像が出せます。</p>
+        </div>
+
+        <div class="jr-card">
+            <div class="jr-icon">❄️</div>
+            <div class="jr-tag">例え：宇宙が見える望遠鏡</div>
+            <h3>MCT シリーズ</h3>
+            <p class="jr-desc"><b>特徴：</b>マイナス200度まで冷やして使う、世界最強の目。<br><b>使い道：</b>数km先の熱をキャッチ。軍事や、空からガス漏れを探す高度な仕事に。</p>
+        </div>
+
+        <div class="jr-card">
+            <div class="jr-icon">🔍</div>
+            <div class="jr-tag">例え：魔法のレントゲン</div>
+            <h3>InGaAs / IGN</h3>
+            <p class="jr-desc"><b>特徴：</b>温度ではなく「物質そのものの違い」を見る。<br><b>使い道：</b>シリコンを透かして半導体の中をチェックしたり、リンゴの傷を隠れた水分で見つけたりします。</p>
+        </div>
+    </div>
+
+    <div class="jr-summary">
+        <p>一言でいうと...<br>
+        <b>「普通の熱ならボロメーター、すぐ使いたいならATI、遠くをガチで見たいならMCT、中身を透かしたいならIGN」</b><br>
+        という使い分けになっています！</p>
+    </div>
+</section>
 
 <footer>
     <img src="logo.png" alt="CHRONIX" style="height: 50px; margin-bottom: 20px; filter: brightness(1.5);">
