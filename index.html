@@ -33,7 +33,7 @@
         .top-nav img { height: 40px; cursor: pointer; }
 
         header {
-            min-height: 60vh;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -43,10 +43,10 @@
             padding: 80px 20px 40px;
         }
 
-        .lynred-logo { max-width: 280px; margin-bottom: 20px; cursor: pointer; }
+        .lynred-logo { max-width: 250px; margin-bottom: 20px; cursor: pointer; }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin: 0;
             letter-spacing: 0.1em;
             background: linear-gradient(to right, #fff, var(--brand-red));
@@ -99,19 +99,23 @@
             border-radius: 15px;
             transition: 0.3s;
             cursor: zoom-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .img-wrap:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(178,34,34,0.3); }
-        .img-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        .img-wrap img { max-width: 100%; height: auto; border-radius: 5px; }
 
-        .product-info h2 { font-size: 2rem; margin-bottom: 15px; border-left: 5px solid var(--brand-red); padding-left: 15px; }
-        .type-tag { color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+        .product-info h2 { font-size: 1.8rem; margin-bottom: 15px; border-left: 5px solid var(--brand-red); padding-left: 15px; }
+        .type-tag { color: var(--accent-gold); font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Report area */
         .report-area {
             background: #0f172a;
-            padding: 60px;
+            padding: 50px;
             border-radius: 20px;
             margin-top: 100px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         /* Footer */
@@ -160,11 +164,11 @@
         <h2>赤外線カメラの「2大勢力」を知る</h2>
         <div class="tech-grid">
             <div class="tech-card">
-                <h3>冷却型 (MCT等)</h3>
-                <p>センサーを-200°C近くまで冷却し、ノイズを極限まで排除。数km先の微かな熱源を捉える「ガチ」な用途（宇宙・軍事）向け。</p>
+                <h3>冷却型 (Cooled)</h3>
+                <p>センサーを-200°C近くまで冷やし、ノイズを極限まで排除。数km先の微かな熱源を捉える「ガチ」な用途（宇宙・軍事）向け。</p>
             </div>
             <div class="tech-card">
-                <h3>非冷却型 (マイクロボロメーター)</h3>
+                <h3>非冷却型 (Uncooled)</h3>
                 <p>冷やさずに動作。小型・軽量・低価格で、車載ナイトビジョンや工場点検、体温測定など「暮らしを支える」用途に最適。</p>
             </div>
         </div>
@@ -178,7 +182,7 @@
             <span class="type-tag">Integrated Module</span>
             <h2>ATI シリーズ</h2>
             <p><strong>ATIは「センサー」ではありません。脳（画像処理エンジン）を備えた「完成モジュール」です。</strong></p>
-            <p>通常、センサー単体ではノイズだらけですが、ATIは内部で画像補正（BPR/NUC）を完結。ユーザーは繋ぐだけで綺麗な映像を得られます。12μmピッチの微細化により、超小型化（SWaP）を実現しました。</p>
+            <p>通常のセンサーは生のデータを出力しますが、ATIは内部で画像補正を済ませた「綺麗な映像」を即座に出力します。12μmピッチの微細化により、超小型化（SWaP）を実現しました。</p>
         </div>
     </div>
 
@@ -190,7 +194,7 @@
             <span class="type-tag">Cooled Detector</span>
             <h2>MCT シリーズ</h2>
             <p><strong>「見えないはずの遠く」をクッキリ映し出す最高峰。</strong></p>
-            <p>センサーを冷却してノイズを消し去ることで、圧倒的な感度を誇ります。特定のガス（メタン等）を可視化する波長設定も可能。MWIR（中波長）を利用した遠距離監視の決定版です。</p>
+            <p>液体窒素レベルで冷却し、自己ノイズを消し去ることで圧倒的な感度を誇ります。宇宙観測や、数km先のガス漏れを見つけるためのMWIR（中波長）における決定版です。</p>
         </div>
     </div>
 
@@ -202,35 +206,37 @@
             <span class="type-tag">SWIR Sensor</span>
             <h2>InGaAs シリーズ</h2>
             <p><strong>温度ではなく、物質の「質」を見抜く目。</strong></p>
-            <p>可視光に近い「短波長赤外線（SWIR）」を利用。シリコンを透かして半導体内部を検査したり、水分吸収の違いで食品の傷みを見分けたりします。300Hzの超高速駆動が自慢です。</p>
+            <p>可視光に近い「短波長赤外線（SWIR）」を利用。シリコンを透かして半導体の中を見たり、水分の吸収の違いで食品の傷みを見分けたりします。300Hzの超高速駆動が自慢です。</p>
         </div>
     </div>
 
-   <div class="product-box alt">
-        <div class="img-wrap" onclick="window.open('ati.png', '_blank')">
+    <div class="product-box alt">
+        <div class="img-wrap" onclick="window.open('ign.png', '_blank')">
+            <img src="ign.png" alt="IGN Sensor">
+        </div>
+        <div class="product-info">
+            <span class="type-tag">IGN / InGaAs Detector</span>
+            <h2>IGN シリーズ</h2>
+            <p><strong>物質の反射と透過を極める、短波長のエキスパート。</strong></p>
+            <p>「熱」ではなく「光の反射」を捉えるため、真っ暗闇でも大気中の光（エアグロー）を使って昼間のような映像を得ることも可能です。高度な識別が必要な産業・防衛検査に特化しています。</p>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <div class="img-wrap" onclick="window.open('ing.png', '_blank')">
             <img src="ing.png" alt="Microbolometer">
         </div>
         <div class="product-info">
             <span class="type-tag">Microbolometer Chip</span>
             <h2>マイクロボロメーター</h2>
-            <p><strong>非冷却赤外線の心臓部。熱を「抵抗値」に変える魔法の素子。</strong></p>
-            <p>かつて45μmだった画素は今や12μmへ。微細化により、カメラを小型化しつつHD画質を実現（SWaP）。車の自動運転における「夜間の目」の正体は、この素子の進化にあります。</p>
+            <p><strong>非冷却赤外線の心臓部。熱を「抵抗値」に変える素子。</strong></p>
+            <p>かつて45μmだった画素は今や12μmへ。微細化により、カメラを小型化しつつHD画質を実現しました。車の自動運転や工場での異常発熱チェックを支える「魔法の目」の正体です。</p>
         </div>
-    </div>
-
-
-    <div class="product-hero">
-        <div class="img-main" onclick="window.open('ingaas.png', '_blank')">
-            <img src="ign.png" alt="IGN InGaAs Sensor">
-        </div>
-        <span class="badge">SWIR / InGaAs SENSOR</span>
-        <h1>IGN シリーズ</h1>
-        <p>「熱」ではなく「物質の性質」を捉える、短波長赤外線のエキスパート</p>
     </div>
 
     <section class="report-area">
-        <h2 style="color: var(--brand-red);">【レポート】SWaP最適化がもたらす産業DX</h2>
-        <p>赤外線センシングは「単なる温度計測」から「AIのための環境認識」へと進化しました。ピクセルの微細化により、かつては巨大だったカメラがドローンや小型ロボットに搭載可能（SWaP最適化）になり、シャッターレス・アルゴリズムによって映像が止まるストレスも解消されました。今や赤外線は、私たちの暮らしを陰で支える「魔法の目」なのです。</p>
+        <h2 style="color: var(--brand-red); border-bottom: 1px solid #2a3241; padding-bottom: 10px;">赤外線技術が暮らしを支える</h2>
+        <p>技術革新（微細化・アルゴリズム進化）により、かつては巨大で冷却が必要だったカメラが「小さく・安く（SWaP）」なりました。今や赤外線は、自動運転やガス漏れチェック、食品検査など、あらゆる産業DXの現場で活躍しています。</p>
     </section>
 </div>
 
