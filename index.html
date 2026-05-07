@@ -30,12 +30,12 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(10,15,24,0.7), rgba(10,15,24,0.7)), url('hero-bg.jpg') center/cover; /* 適宜背景画像を */
+            background: linear-gradient(rgba(10,15,24,0.8), rgba(10,15,24,0.8)), url('hero-bg.jpg') center/cover;
             padding: 0 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
             letter-spacing: 0.1em;
             background: linear-gradient(to right, #fff, var(--brand-red));
@@ -50,20 +50,20 @@
             background: var(--card-bg);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             border-top: 4px solid var(--brand-red);
         }
 
-        .summary-card h2 { color: var(--brand-red); font-size: 1.5rem; }
+        .summary-card h2 { color: var(--brand-red); font-size: 1.6rem; margin-top: 0; }
 
-        /* Product Grid */
+        /* Container & Grid */
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
         .product-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 100px;
+            gap: 60px;
+            margin-bottom: 120px;
             align-items: center;
         }
 
@@ -71,69 +71,72 @@
         .product-section:nth-child(even) .product-info { direction: ltr; }
 
         .img-container {
-            background: #fff; /* 製品画像を引き立てるため白背景のカードに */
-            padding: 30px;
-            border-radius: 20px;
-            transition: transform 0.3s ease;
+            background: #fff;
+            padding: 40px;
+            border-radius: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .img-container:hover { transform: translateY(-10px); }
-
-        .img-container img { width: 100%; height: auto; }
+        .img-container:hover { transform: translateY(-15px) scale(1.02); }
+        .img-container img { width: 100%; height: auto; border-radius: 10px; }
 
         .spec-badge {
             display: inline-block;
-            background: rgba(178, 34, 34, 0.2);
-            color: var(--brand-red);
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            background: rgba(178, 34, 34, 0.15);
+            color: #ff4d4d;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid rgba(178, 34, 34, 0.3);
         }
 
         .feature-list { list-style: none; padding: 0; }
         .feature-list li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
+            padding-left: 28px;
+            margin-bottom: 15px;
             color: var(--text-sub);
+            font-size: 0.95rem;
         }
         .feature-list li::before {
-            content: '▶';
+            content: 'L';
             position: absolute;
             left: 0;
+            top: 2px;
+            transform: rotate(45deg) scaleX(-1);
             color: var(--brand-red);
-            font-size: 0.8rem;
+            font-weight: bold;
         }
 
-        /* Comparison Section */
+        /* Comparison Table */
         .comparison-table {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 40px;
             background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         .comparison-table th, .comparison-table td {
-            padding: 20px;
-            border: 1px solid #2a3241;
+            padding: 22px;
+            border-bottom: 1px solid #2a3241;
             text-align: center;
         }
-        .comparison-table th { background: #1a2230; color: var(--brand-red); }
+        .comparison-table th { background: #1a2230; color: var(--brand-red); font-weight: 700; }
+        .comparison-table tr:last-child td { border-bottom: none; }
 
         footer {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: #05080d;
+            border-top: 1px solid #1a2230;
         }
 
         .btn-contact {
             background: var(--brand-red);
             color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-contact:hover { background: #e6
