@@ -24,34 +24,46 @@
 
         /* Hero Section */
         header {
-            height: 80vh;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(10,15,24,0.8), rgba(10,15,24,0.8)), url('hero-bg.jpg') center/cover;
-            padding: 0 20px;
+            /* 背景画像がなくても真っ黒にならないよう、グラデーションを配置 */
+            background: radial-gradient(circle at center, #1a2230 0%, var(--dark-bg) 100%);
+            padding: 40px 20px;
+        }
+
+        header p.brand-tag {
+            letter-spacing: 4px;
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin: 0 0 15px;
             letter-spacing: 0.1em;
             background: linear-gradient(to right, #fff, var(--brand-red));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
 
-        /* Report Summary Card */
+        /* Summary Card */
         .summary-card {
             max-width: 900px;
-            margin: -100px auto 50px;
+            margin: -50px auto 50px;
             background: var(--card-bg);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             border-top: 4px solid var(--brand-red);
+            position: relative;
+            z-index: 10;
         }
 
         .summary-card h2 { color: var(--brand-red); font-size: 1.6rem; margin-top: 0; }
@@ -63,34 +75,35 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            margin-bottom: 120px;
+            margin-bottom: 100px;
             align-items: center;
         }
 
-        .product-section:nth-child(even) { direction: rtl; }
-        .product-section:nth-child(even) .product-info { direction: ltr; }
-
         .img-container {
             background: #fff;
-            padding: 40px;
-            border-radius: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
         }
 
-        .img-container:hover { transform: translateY(-15px) scale(1.02); }
-        .img-container img { width: 100%; height: auto; border-radius: 10px; }
+        .img-container:hover { transform: translateY(-10px); }
+        .img-container img { max-width: 100%; height: auto; border-radius: 5px; }
+
+        .product-info h2 { color: #fff; border-left: 4px solid var(--brand-red); padding-left: 15px; margin-bottom: 10px; }
 
         .spec-badge {
             display: inline-block;
-            background: rgba(178, 34, 34, 0.15);
+            background: rgba(178, 34, 34, 0.2);
             color: #ff4d4d;
             padding: 4px 14px;
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 700;
             margin-bottom: 15px;
-            border: 1px solid rgba(178, 34, 34, 0.3);
         }
 
         .feature-list { list-style: none; padding: 0; }
@@ -99,37 +112,32 @@
             padding-left: 28px;
             margin-bottom: 15px;
             color: var(--text-sub);
-            font-size: 0.95rem;
         }
         .feature-list li::before {
-            content: 'L';
+            content: '▶';
             position: absolute;
             left: 0;
-            top: 2px;
-            transform: rotate(45deg) scaleX(-1);
             color: var(--brand-red);
-            font-weight: bold;
+            font-size: 0.8rem;
         }
 
-        /* Comparison Table */
+        /* Table */
         .comparison-table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse;
             margin-top: 40px;
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         .comparison-table th, .comparison-table td {
-            padding: 22px;
-            border-bottom: 1px solid #2a3241;
+            padding: 20px;
+            border: 1px solid #2a3241;
             text-align: center;
         }
-        .comparison-table th { background: #1a2230; color: var(--brand-red); font-weight: 700; }
-        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table th { background: #1a2230; color: var(--brand-red); }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 100px 20px;
@@ -140,3 +148,122 @@
         .btn-contact {
             background: var(--brand-red);
             color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-contact:hover { background: #e60000; box-shadow: 0 0 20px rgba(178,34,34,0.5); }
+
+        /* RTL for alternating rows */
+        .product-section.alt { direction: rtl; }
+        .product-section.alt .product-info { direction: ltr; }
+
+        @media (max-width: 768px) {
+            .product-section, .product-section.alt { grid-template-columns: 1fr; direction: ltr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p class="brand-tag">STATE-OF-THE-ART INFRARED</p>
+    <h1>LYNRED TECHNOLOGY</h1>
+    <p>見えない波長を、即座に価値ある画像へ変換する</p>
+</header>
+
+<div class="summary-card">
+    <h2>「Ready to Sense」—— 開発を加速するATIモジュールの革命</h2>
+    <p>最新のATI（Advanced Thermal Imager）モジュールは、センサー単体を超え、画像補正エンジンを統合した「完成されたビジョンシステム」です。12µmピッチの微細化技術をベースに、ユーザー側の処理負荷を大幅に低減します [cite: 167, 178, 186]。</p>
+</div>
+
+<div class="container">
+    <div class="product-section">
+        <div class="img-container">
+            <img src="ati.png" alt="ATI Module">
+        </div>
+        <div class="product-info">
+            <span class="spec-badge">ATI / ATTO TECHNOLOGY</span>
+            <h2>ATI シリーズ</h2>
+            <p><strong>インテリジェンスを内蔵した即戦力モジュール</strong></p>
+            <ul class="feature-list">
+                <li>不均一補正(NUC)やバッドピクセル置換(BPR)をモジュール内で完結 [cite: 216, 263]。</li>
+                <li>AT1320は約7.5gの超軽量設計で、ドローン等への実装に最適 [cite: 525]。</li>
+                <li>0.3ms〜1.2msの超低遅延出力により高速な制御に対応 [cite: 221]。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product-section alt">
+        <div class="img-container">
+            <img src="mct-mw.png" alt="MCT Sensor">
+        </div>
+        <div class="product-info">
+            <span class="spec-badge">MCT / COOLED</span>
+            <h2>MCT シリーズ</h2>
+            <p><strong>究極の感度が要求される極限の任務へ</strong></p>
+            <ul class="feature-list">
+                <li>NETD < 20mK の圧倒的な温度分解能で微細な熱源を特定。</li>
+                <li>宇宙観測や防衛、ガスの分光分析に適した広帯域な波長対応。</li>
+                <li>冷却型ならではの高精度な thermography 用途をサポート。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <div class="img-container">
+            <img src="ingaas.png" alt="InGaAs Sensor">
+        </div>
+        <div class="product-info">
+            <span class="spec-badge">InGaAs (SWIR)</span>
+            <h2>InGaAs シリーズ</h2>
+            <p><strong>近赤外領域が切り拓く、産業検査の新しい視点</strong></p>
+            <ul class="feature-list">
+                <li>300Hzの超高速イメージングで高速生産ラインの不良を検知。</li>
+                <li>シリコン透過性能を活かした半導体ウェハーの非破壊内部検査。</li>
+                <li>特定の波長吸収を利用した水分検知や物質判別。</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; margin-top: 80px;">ATI/ATTO スペックガイド</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>モデル</th>
+            <th>解像度</th>
+            <th>重量 (最小)</th>
+            <th>遅延</th>
+            <th>感度 (NETD)</th>
+        </tr>
+        <tr>
+            <td>ATI320 (QVGA)</td>
+            <td>320 x 240 [cite: 221]</td>
+            <td>7.5 g [cite: 525]</td>
+            <td>< 0.4 ms [cite: 221]</td>
+            <td>< 50 mK [cite: 221]</td>
+        </tr>
+        <tr>
+            <td>ATI640 (VGA)</td>
+            <td>640 x 480 [cite: 221]</td>
+            <td>14.0 g [cite: 356]</td>
+            <td>< 1.3 ms [cite: 221]</td>
+            <td>< 40 mK [cite: 221]</td>
+        </tr>
+    </table>
+</div>
+
+<footer>
+    <h2>システム設計のボトルネックを解消する</h2>
+    <p>センサーのポテンシャルを100%引き出すには、Janos Technologyの精密光学系との統合設計が不可欠です。</p>
+    <br><br>
+    <a href="mailto:sales@chronix.co.jp" class="btn-contact">クロニクス株式会社へ問い合わせる</a>
+    <p style="margin-top: 50px; font-size: 0.8rem; color: var(--text-sub);">
+        © 2026 CHRONIX & LYNRED. Confidential Information.
+    </p>
+</footer>
+
+</body>
+</html>
